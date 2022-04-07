@@ -2,8 +2,8 @@
   "name": "vuepress-web-view",
   "version": "1.0.0",
   "description": "# vuePress-web-view 静态网站生成器 git https://github.com/lidaxuan/vuePress-web-view",
-  "main": "README.md",
   "scripts": {
+    "dev": "vuepress dev docs --temp .temp",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "test": "echo \"Error: no test specified\" && exit 1"
