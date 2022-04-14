@@ -23,5 +23,9 @@
   "homepage": "https://github.com/lidaxuan/vuePress-web-view#readme",
   "devDependencies": {
     "vuepress": "^1.9.7"
+  },
+  "dependencies": {
+    "vuepress-plugin-auto-sidebar": "^2.3.2",
+    "vuepress-plugin-toolbar": "^1.0.1"
   }
 }
