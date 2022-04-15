@@ -9,22 +9,12 @@ const utils = require('./utils');
 const readFileList = require('./readFileList');
 const files = readFileList('./docs');
 console.log('files', files);
-// files.forEach( file => {
-//   const { data } = matter(fs.readFileSync(file.filePath, 'utf8')); 
-
-//   if (data.permalink) {
-//     const link = `\r\n${DOMAIN}${data.permalink}`;
-//     console.log(link)
-//     fs.appendFileSync(urlsRoot, link);
-//   }
-// })
 
 let enumsObj = {};
 for (let i = 0; i < files.length; i++) {
   let title = files[i][0].split('/')[0];
   enumsObj[title] = [].concat(enumsObj[title] || [], [files[i]])
 }
-console.log('enumsObj', enumsObj);
 let sidebarArr = [];
 for (const key in enumsObj) {
   const item = {
@@ -38,6 +28,8 @@ for (const key in enumsObj) {
 module.exports = {
   port: '2062', //端口号
   hot: true,
+  base:'./',  
+  dest: './dist',  
   title: '前端开发-李大玄',
   description: 'Just playing around',
   // head: [
@@ -55,7 +47,7 @@ module.exports = {
   },
   themeConfig: {
     // navbar: false, // 你可以使用 themeConfig.navbar 来禁用所有页面的导航栏：
-    logo: 'https://gimg3.baidu.com/search/src=http%3A%2F%2Fpics6.baidu.com%2Ffeed%2F0eb30f2442a7d9332bae5cd5f26fcb1972f001c4.jpeg%3Ftoken%3Dbae4c26a1923d14e49d029ad29bc9565&refer=http%3A%2F%2Fwww.baidu.com&app=2021&size=f360,240&n=0&g=0n&q=75&fmt=auto?sec=1648746000&t=b136ec96b72c6b116cfc2e9cc7f744be',
+    logo: 'https://img-blog.csdnimg.cn/211e986a4c1a41ab8e36c7d1123c9d89.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA0LzQvuS7meWgoeadoOaKiuWtkOOBlOeBrA==,size_16,color_FFFFFF,t_70,g_se,x_16#pic_center',
     nav: [
       { text: 'Home', link: '01.前端/25.JavaScript文章/01.33个非常实用的JavaScript一行代码' },
       // { text: 'Guide', link: '/guide/' },

@@ -8,7 +8,8 @@
 /**
  *  读取所有md文件数据
  */
- const fs = require('fs'); // 文件模块
+ const { log } = require('console');
+const fs = require('fs'); // 文件模块
  const path = require('path'); // 路径模块
  const docsRoot = path.join(__dirname, '..', '..', 'docs'); // docs文件路径
  
@@ -23,6 +24,7 @@
        if (path.basename(dir) !== 'docs') { // 过滤docs目录级下的文件
  
          const fileNameArr = path.basename(filePath).split('.')
+         console.log('fileNameArr', fileNameArr);
          let name = null,
            type = null;
          if (fileNameArr.length === 2) { // 没有序号的文件
