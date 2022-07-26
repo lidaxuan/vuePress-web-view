@@ -4,7 +4,7 @@
  # @Date: 2022-07-22 14:55:46
  # @FilePath: /vuePress-web-view/deploy.sh
  # @LastEditors: 李大玄
- # @LastEditTime: 2022-07-22 14:55:47
+ # @LastEditTime: 2022-07-22 20:45:32
 ### 
 #!/usr/bin/env sh
 
@@ -28,6 +28,7 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
+git push -f git@github.com:lidaxuan/vuePress-web-view.git master:gh-pages
+
 
 cd -

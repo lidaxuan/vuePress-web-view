@@ -29,8 +29,8 @@ module.exports = {
   port: '2062', //端口号
   hot: true,
   // base:'./',
-  base: "/vuePress- web - view",
-  dest: './dist',
+  base: "/vuePress-web-view",
+  // dest: './dist',
   title: '前端开发-李大玄',
   description: 'Just playing around',
   // head: [
