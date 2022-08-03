@@ -9,7 +9,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "gh-pages -d docs/.vuepress/dist",
     "commit": "npm run docs:build && npm run deploy"
-
   },
   "repository": {
     "type": "git",
