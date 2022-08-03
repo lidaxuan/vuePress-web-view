@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MySQL安装配置 | 李大玄-web</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="个人笔记">
+    
+    <link rel="preload" href="/vuePress-web-view/assets/css/0.styles.c2718638.css" as="style"><link rel="preload" href="/vuePress-web-view/assets/js/app.9d548cc9.js" as="script"><link rel="preload" href="/vuePress-web-view/assets/js/2.d261dd2c.js" as="script"><link rel="preload" href="/vuePress-web-view/assets/js/201.68d02e94.js" as="script"><link rel="prefetch" href="/vuePress-web-view/assets/js/10.a48ae725.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/100.31b77e2e.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/101.ee0393a7.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/102.4ffb4555.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/103.2b6cd4bb.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/104.86f7f5d1.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/105.d8b941ff.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/106.baf37d15.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/107.f6bac825.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/108.a93588b0.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/109.fd5f5757.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/11.aa124183.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/110.6afcdbcf.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/111.bf7cdb62.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/112.c831cc8e.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/113.ab0472b6.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/114.6255ad43.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/115.ea5182be.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/116.47a622f4.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/117.9f09f544.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/118.cef05c85.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/119.fd705a23.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/12.6c24c48c.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/120.ab41de76.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/121.67c30044.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/122.b4a680cf.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/123.295a7cf9.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/124.835fdb73.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/125.d90e59f5.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/126.1698ab99.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/127.affc31da.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/128.798f8516.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/129.0736e188.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/13.a310f58d.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/130.54baeacd.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/131.90ee329c.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/132.789c76f9.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/133.7016b962.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/134.ec999e5b.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/135.0d341d17.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/136.2ac62e1a.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/137.8f0c7146.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/138.6d04fcf0.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/139.c451aeaf.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/14.87a433a3.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/140.e749f2a5.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/141.5b7223fe.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/142.e30c9a52.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/143.a3f2acff.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/144.70210b85.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/145.d380b661.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/146.fdd138e6.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/147.5c7e57b2.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/148.e6a47e5d.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/149.93123fcd.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/15.d1ba5ef1.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/150.e54efda2.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/151.82ded173.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/152.dbb5a839.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/153.376eb0cb.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/154.158e5d0b.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/155.a6006567.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/156.c106b42c.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/157.1fd74dac.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/158.b6233e0e.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/159.1e210453.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/16.d3afb68b.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/160.f95fa361.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/161.e582dc34.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/162.96759a91.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/163.13a051f3.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/164.9688da6e.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/165.004b848f.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/166.ea9dd1b0.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/167.648d0a28.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/168.55572fde.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/169.464bef40.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/17.4ff9eef8.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/170.bca759d8.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/171.6ed9789e.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/172.6c1dda88.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/173.935380c9.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/174.fc362143.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/175.e37f291e.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/176.6941b120.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/177.1e0d1a29.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/178.afff297d.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/179.eb4017f8.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/18.fb5e1663.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/180.14706387.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/181.cc32acf4.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/182.0dd9d46c.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/183.db9bb28f.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/184.f28bab17.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/185.093c85ed.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/186.48710590.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/187.53a0c205.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/188.ec4ac2f3.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/189.c40988c1.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/19.6c014172.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/190.f7c433e4.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/191.c89de971.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/192.b451724c.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/193.585e0b55.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/194.916bb312.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/195.cd72be0c.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/196.cc49707d.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/197.8ab74597.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/198.1fcb2012.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/199.8fb793a7.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/20.2417c7a2.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/200.6892fa98.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/202.b51294a2.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/203.5ab9e09c.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/204.aadfb86b.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/205.dad09347.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/206.411747ce.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/207.8647fc68.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/208.fc1e5a5e.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/209.f56fe89a.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/21.37bbe25c.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/210.7396b5f3.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/211.039097e2.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/212.cb8caac3.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/213.67e86c4c.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/214.d45995c8.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/215.1a7fa2d1.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/216.f7e99a80.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/217.39a801d7.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/218.5e113743.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/219.b91832c1.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/22.aff597b3.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/220.ed6f7887.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/221.8255ede9.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/222.953aa5df.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/223.b3c3bc41.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/224.e640ba9a.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/225.6ccc1288.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/226.8e084913.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/227.e46166d5.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/228.4a894040.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/229.d6dccc00.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/23.a6e85ba6.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/230.42fe58ae.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/231.29f22e36.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/232.6909d4ea.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/233.1bb5e658.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/234.ce10d276.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/235.c23b641b.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/236.805c5b9f.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/237.cc4a93a8.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/238.1d85aa3c.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/239.55c686df.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/24.2bd6fcd9.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/240.fe72a9a6.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/241.a0e7cc88.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/242.b86dd5aa.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/243.4dc0b22c.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/244.c1b64b07.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/245.9077fd9d.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/246.eb0f0f5a.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/247.192b0880.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/248.17550c3d.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/249.51c38514.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/25.2d9a5cf9.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/250.1543b252.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/251.f27a3aa8.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/252.5a7580ae.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/253.6f0aceb6.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/254.c6d1ff96.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/255.b08a6e46.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/256.7543d600.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/257.9137f90f.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/258.4750b6e7.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/259.5df1f9ec.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/26.d726f8bb.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/260.25e6fd67.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/261.1bfc735f.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/262.56228d9b.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/263.ce4a3070.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/264.1db57786.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/265.bcaf1a18.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/266.5dd3bb45.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/267.c300bdc4.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/268.49e4d328.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/269.b09f6d14.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/27.74f38749.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/270.08de9f5a.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/271.e859ea6b.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/272.718340d3.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/273.161cacbc.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/274.f6cd8a7f.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/275.8f27f04e.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/276.dada3691.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/277.a4a6674a.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/278.2a859964.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/279.b308d244.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/28.b96502c7.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/280.ac1dff19.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/281.1dd9e1d4.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/282.542f5bf0.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/283.2e57233f.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/284.360c88c1.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/285.8340d592.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/286.ad357589.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/287.9d7c0119.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/288.397b7d03.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/289.a3e85c0a.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/29.ca25bc2e.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/290.a004dd9a.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/291.f1d96c08.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/292.7cbf75b2.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/293.ade9c47c.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/294.487efb3a.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/295.2959c002.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/296.e6db423d.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/297.61b0ab15.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/298.c60e021c.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/299.b1c1edbb.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/3.9195152d.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/30.6435685e.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/300.99503b0a.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/301.eada8ea7.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/31.b28dbd41.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/32.fa0cb0d1.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/33.3e29ea12.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/34.cd845028.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/35.27ba8611.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/36.8734d87e.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/37.9cdd18c9.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/38.cb0aa41c.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/39.7eab92a9.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/4.1014300c.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/40.28fcee8e.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/41.1bab8de4.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/42.9504390a.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/43.21080607.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/44.90112286.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/45.5b3c3bf5.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/46.26d971e2.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/47.5a3482f0.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/48.7161ac28.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/49.ee2ff29c.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/5.bc4c35f3.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/50.d98c809b.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/51.a42baa61.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/52.2ae67f8f.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/53.188676c0.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/54.3d99d2db.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/55.d54d2647.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/56.812bc5f2.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/57.0187da30.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/58.6ebcfe66.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/59.6a0ee1ea.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/6.ebd53634.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/60.6dcf86c3.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/61.4d5b0c0a.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/62.8d980feb.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/63.8975f540.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/64.29f73438.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/65.c2d8219c.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/66.26439d74.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/67.17441d7f.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/68.be94027e.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/69.ddb33dd4.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/7.432a7bae.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/70.9fce17ba.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/71.4ef64120.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/72.a8364ce9.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/73.0adb6eb0.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/74.5659edd9.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/75.9ff87c47.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/76.7b42b696.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/77.d928389b.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/78.0acdc9c0.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/79.4a5c6932.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/8.8312b405.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/80.249b295c.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/81.9c6ab87c.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/82.b167257e.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/83.65fef4d5.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/84.0816ace0.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/85.5a293e1b.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/86.8951eb1f.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/87.df74e5a9.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/88.e707dba1.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/89.c7b07f38.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/9.b60c2467.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/90.dee48975.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/91.e744cbb9.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/92.aa7063d4.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/93.8a1c0d47.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/94.1f8aab49.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/95.1255c682.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/96.925254d6.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/97.17346568.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/98.e3bbed56.js"><link rel="prefetch" href="/vuePress-web-view/assets/js/99.0f8c663f.js">
+    <link rel="stylesheet" href="/vuePress-web-view/assets/css/0.styles.c2718638.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuePress-web-view/" class="home-link router-link-active"><img src="https://img-blog.csdnimg.cn/211e986a4c1a41ab8e36c7d1123c9d89.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA0LzQvuS7meWgoeadoOaKiuWtkOOBlOeBrA==,size_16,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="李大玄-web" class="logo"> <span class="site-name can-hide">李大玄-web</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vuePress-web-view/%E3%80%8ASQL%E3%80%8B%E7%AC%94%E8%AE%B0/01.前端/25.JavaScript文章/01.33个非常实用的JavaScript一行代码.html" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="https://google.com" target="_self" class="nav-link external">
+  External
+  <!----></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vuePress-web-view/%E3%80%8ASQL%E3%80%8B%E7%AC%94%E8%AE%B0/01.前端/25.JavaScript文章/01.33个非常实用的JavaScript一行代码.html" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="https://google.com" target="_self" class="nav-link external">
+  External
+  <!----></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>01.前端</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>02.页面</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>03.技术</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>04.更多</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>05.关于</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>06.收藏夹</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>07.开发规范</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>08.vscode</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>09.语法文档</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>《ES6 教程》笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>《GO》笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>《Git》学习笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>《IDE》笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>《JavaScript教程》笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>《Java》笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>《Python》笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>《React》笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>《SQL》笔记</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vuePress-web-view/《SQL》笔记/MySQL.html" class="sidebar-link">MySQL</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL.html#flag" class="sidebar-link">Flag</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL.html#索引" class="sidebar-link">索引</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL.html#常见问题" class="sidebar-link">常见问题</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL.html#group-concat" class="sidebar-link">GROUP_CONCAT</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL.html#修改默认值大小" class="sidebar-link">修改默认值大小</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL.html#自定义函数" class="sidebar-link">自定义函数</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL.html#表名未忽略大小写" class="sidebar-link">表名未忽略大小写</a></li></ul></li></ul></li><li><a href="/vuePress-web-view/《SQL》笔记/MySQL事件.html" class="sidebar-link">MySQL事件</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL事件.html#事件是什么" class="sidebar-link">事件是什么</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL事件.html#查看事件调度器" class="sidebar-link">查看事件调度器</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL事件.html#开启事件调度器" class="sidebar-link">开启事件调度器</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL事件.html#查看事件" class="sidebar-link">查看事件</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL事件.html#查看事件创建语句" class="sidebar-link">查看事件创建语句</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL事件.html#创建事件" class="sidebar-link">创建事件</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL事件.html#每隔一秒执行" class="sidebar-link">每隔一秒执行</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL事件.html#每天凌晨1点执行" class="sidebar-link">每天凌晨1点执行</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL事件.html#每隔一分钟执行" class="sidebar-link">每隔一分钟执行</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL事件.html#指定时间范围内执行" class="sidebar-link">指定时间范围内执行</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL事件.html#一小时后只执行一次" class="sidebar-link">一小时后只执行一次</a></li></ul></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL事件.html#修改事件" class="sidebar-link">修改事件</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL事件.html#删除事件" class="sidebar-link">删除事件</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL事件.html#开启事件" class="sidebar-link">开启事件</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL事件.html#停止事件" class="sidebar-link">停止事件</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL事件.html#启动定时器" class="sidebar-link">启动定时器</a></li></ul></li><li><a href="/vuePress-web-view/《SQL》笔记/MySQL备份恢复.html" class="sidebar-link">MySQL备份恢复</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL备份恢复.html#flag" class="sidebar-link">Flag</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL备份恢复.html#binlog2sql" class="sidebar-link">binlog2sql</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL备份恢复.html#mysql必须设置参数" class="sidebar-link">MySQL必须设置参数</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL备份恢复.html#user需要的最小权限集合" class="sidebar-link">user需要的最小权限集合</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL备份恢复.html#查看目前的binlog文件" class="sidebar-link">查看目前的binlog文件</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL备份恢复.html#定位误操作sql的binlog位置" class="sidebar-link">定位误操作SQL的binlog位置</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL备份恢复.html#生成sql文件回滚" class="sidebar-link">生成sql文件回滚</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL备份恢复.html#不生成sql文件回滚" class="sidebar-link">不生成sql文件回滚</a></li></ul></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL备份恢复.html#mysqldump" class="sidebar-link">mysqldump</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL备份恢复.html#mysqldump导出" class="sidebar-link">mysqldump导出</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL备份恢复.html#mysqldump导入" class="sidebar-link">mysqldump导入</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL备份恢复.html#mysqldump两台主机同步" class="sidebar-link">mysqldump两台主机同步</a></li></ul></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL备份恢复.html#source命令导入" class="sidebar-link">source命令导入</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL备份恢复.html#主从同步" class="sidebar-link">主从同步</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL备份恢复.html#配置主服务器" class="sidebar-link">配置主服务器</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL备份恢复.html#配置从服务器" class="sidebar-link">配置从服务器</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL备份恢复.html#如果出现以下错误" class="sidebar-link">如果出现以下错误</a></li></ul></li></ul></li><li><a href="/vuePress-web-view/《SQL》笔记/MySQL存储过程.html" class="sidebar-link">MySQL存储过程</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL存储过程.html#创建游标存储过程" class="sidebar-link">创建游标存储过程</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL存储过程.html#调用存储过程-查询返回结果" class="sidebar-link">调用存储过程，查询返回结果</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL存储过程.html#多次调用存储过程-并拼接结果" class="sidebar-link">多次调用存储过程，并拼接结果</a></li></ul></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL存储过程.html#循环" class="sidebar-link">循环</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL存储过程.html#异常处理" class="sidebar-link">异常处理</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL存储过程.html#插入或更新upsert" class="sidebar-link">插入或更新upsert</a></li></ul></li><li><a href="/vuePress-web-view/《SQL》笔记/MySQL安装配置.html" class="active sidebar-link">MySQL安装配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL安装配置.html#flag" class="sidebar-link">Flag</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL安装配置.html#windows版安装" class="sidebar-link">Windows版安装</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL安装配置.html#centos安装" class="sidebar-link">CentOS安装</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL安装配置.html#yum安装" class="sidebar-link">yum安装</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL安装配置.html#编译安装" class="sidebar-link">编译安装</a></li></ul></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL安装配置.html#配置" class="sidebar-link">配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL安装配置.html#yum安装配置" class="sidebar-link">yum安装配置</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL安装配置.html#宝塔面板安装配置" class="sidebar-link">宝塔面板安装配置</a></li></ul></li></ul></li><li><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html" class="sidebar-link">MySQL笔记</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#flag" class="sidebar-link">Flag</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#常用语句" class="sidebar-link">常用语句</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#命令行" class="sidebar-link">命令行</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#随机取值" class="sidebar-link">随机取值</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#随机插入" class="sidebar-link">随机插入</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#查询分组中某字段最大值" class="sidebar-link">查询分组中某字段最大值</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#删除重复值" class="sidebar-link">删除重复值</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#查询数据库中的存储过程" class="sidebar-link">查询数据库中的存储过程</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#事务隔离级别修改" class="sidebar-link">事务隔离级别修改</a></li></ul></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#数据库信息" class="sidebar-link">数据库信息</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#查看数据库详细信息" class="sidebar-link">查看数据库详细信息</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#查看所有数据库信息" class="sidebar-link">查看所有数据库信息</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#查看一个数据库占用空间的大小" class="sidebar-link">查看一个数据库占用空间的大小</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#查看一个表占用空间的大小" class="sidebar-link">查看一个表占用空间的大小</a></li></ul></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#时间函数" class="sidebar-link">时间函数</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#获取当前日期时间" class="sidebar-link">获取当前日期时间</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#获得当前日期" class="sidebar-link">获得当前日期</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#获得当前时间time函数" class="sidebar-link">获得当前时间time函数</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#获得当前utc日期时间函数" class="sidebar-link">获得当前UTC日期时间函数</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#格式化日期" class="sidebar-link">格式化日期</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#生成18位uuid加14位精确到秒的时间" class="sidebar-link">生成18位uuid加14位精确到秒的时间</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#日期增加或者减去一个时间间隔" class="sidebar-link">日期增加或者减去一个时间间隔</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#日期时间相减" class="sidebar-link">日期时间相减</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#时间戳" class="sidebar-link">时间戳</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#日期时间选取" class="sidebar-link">日期时间选取</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#返回星期和月份名称" class="sidebar-link">返回星期和月份名称</a></li></ul></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#用户管理" class="sidebar-link">用户管理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#查看授权" class="sidebar-link">查看授权</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#创建用户并授权" class="sidebar-link">创建用户并授权</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#撤销用户权限" class="sidebar-link">撤销用户权限</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#删除账户及权限" class="sidebar-link">删除账户及权限</a></li></ul></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#安装后修改密码" class="sidebar-link">安装后修改密码</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#使用默认密码进入修改密码" class="sidebar-link">使用默认密码进入修改密码</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html#修改配置修改密码" class="sidebar-link">修改配置修改密码</a></li></ul></li></ul></li><li><a href="/vuePress-web-view/《SQL》笔记/mysql-udf安装.html" class="sidebar-link">mysql-udf安装</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/mysql-udf安装.html#一、mysql-udf-http" class="sidebar-link">一、mysql-udf-http</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/mysql-udf安装.html#安装cur" class="sidebar-link">安装cur</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/mysql-udf安装.html#安装mysql-udf-http" class="sidebar-link">安装mysql-udf-http</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/mysql-udf安装.html#创建" class="sidebar-link">创建</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/mysql-udf安装.html#删除" class="sidebar-link">删除</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/mysql-udf安装.html#验证是否安装成功" class="sidebar-link">验证是否安装成功</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/mysql-udf安装.html#description" class="sidebar-link">Description</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/mysql-udf安装.html#实例" class="sidebar-link">实例</a></li></ul></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/mysql-udf安装.html#二、mysql-udf-json" class="sidebar-link">二、mysql-udf-json</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/mysql-udf安装.html#创建-2" class="sidebar-link">创建</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/mysql-udf安装.html#删除-2" class="sidebar-link">删除</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/mysql-udf安装.html#验证是否安装成功-2" class="sidebar-link">验证是否安装成功</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/mysql-udf安装.html#实例-2" class="sidebar-link">实例</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/mysql-udf安装.html#创建触发器" class="sidebar-link">创建触发器</a></li></ul></li></ul></li><li><a href="/vuePress-web-view/《SQL》笔记/其他数据库.html" class="sidebar-link">其他数据库</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/其他数据库.html#flag" class="sidebar-link">Flag</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/其他数据库.html#oracle" class="sidebar-link">ORACLE</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/其他数据库.html#postgre" class="sidebar-link">Postgre</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/其他数据库.html#sqlite3" class="sidebar-link">SQLite3</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/其他数据库.html#redis" class="sidebar-link">Redis</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/其他数据库.html#memcached" class="sidebar-link">Memcached</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/其他数据库.html#mongodb" class="sidebar-link">MongoDB</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/其他数据库.html#免费数据库" class="sidebar-link">免费数据库</a></li></ul></li><li><a href="/vuePress-web-view/《SQL》笔记/首页.html" class="sidebar-link">首页</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/首页.html#flag" class="sidebar-link">Flag</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/首页.html#ddl-dml-dql-dcl-tcl" class="sidebar-link">DDL/DML/DQL/DCL/TCL</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/首页.html#标准sql" class="sidebar-link">标准SQL</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/首页.html#sql1992" class="sidebar-link">SQL1992</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/首页.html#sql1999" class="sidebar-link">SQL1999</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/首页.html#自连接" class="sidebar-link">自连接</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/首页.html#子查询" class="sidebar-link">子查询</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/首页.html#分页查询" class="sidebar-link">分页查询</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/首页.html#连接查询" class="sidebar-link">连接查询</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/首页.html#case" class="sidebar-link">CASE</a></li><li class="sidebar-sub-header"><a href="/vuePress-web-view/《SQL》笔记/首页.html#sql2003" class="sidebar-link">SQL2003</a></li></ul></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>《Shell》笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>《System》笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>《TypeScript 实现 axios》</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>《Vue》笔记</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="mysql安装配置"><a href="#mysql安装配置" class="header-anchor">#</a> MySQL安装配置</h1> <p></p><div class="table-of-contents"><ul><li><a href="#flag">Flag</a></li><li><a href="#windows版安装">Windows版安装</a></li><li><a href="#centos安装">CentOS安装</a><ul><li><a href="#yum安装">yum安装</a></li><li><a href="#编译安装">编译安装</a></li></ul></li><li><a href="#配置">配置</a><ul><li><a href="#yum安装配置">yum安装配置</a></li><li><a href="#宝塔面板安装配置">宝塔面板安装配置</a></li></ul></li></ul></div><p></p> <h2 id="flag"><a href="#flag" class="header-anchor">#</a> Flag</h2> <ul><li><a href="https://github.com/mysql" target="_blank" rel="noopener noreferrer">https://github.com/mysql<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://dev.mysql.com/downloads/mysql" target="_blank" rel="noopener noreferrer">https://dev.mysql.com/downloads/mysql<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/MariaDB" target="_blank" rel="noopener noreferrer">https://github.com/MariaDB<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <ul><li><a href="https://linuxize.com/post/how-to-install-mysql-on-ubuntu-20-04" target="_blank" rel="noopener noreferrer">如何在 Ubuntu 20.04 上安装 MySQL<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.cnblogs.com/cnwcl/p/13785655.html" target="_blank" rel="noopener noreferrer">ubuntu20 使用命令安装 mysql<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://segmentfault.com/a/1190000039203507" target="_blank" rel="noopener noreferrer">ubuntu20 安装和配置mysql8.0.23<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.jianshu.com/p/9e69e0e38665" target="_blank" rel="noopener noreferrer">ubuntu20安装mysql8<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://blog.csdn.net/lduzhenlin/article/details/113243476" target="_blank" rel="noopener noreferrer">ubuntu20.04安装mysql8.0<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <blockquote><p>在MySQL 8.0上，<code>auth_socket</code>默认情况下，root用户通过插件进行身份验证。该auth_socket插件对localhost通过Unix套接字文件
+从进行连接的用户进行身份验证。这意味着您不能通过提供密码来以root用户身份进行身份验证。</p></blockquote> <h2 id="windows版安装"><a href="#windows版安装" class="header-anchor">#</a> Windows版安装</h2> <blockquote><p>这里是介绍免安装版的Mysql</p></blockquote> <ol><li>安装服务：<code>mysqld --install</code> 如果执行错误需要安装C++运行库</li> <li>初始化：<code>mysqld --initialize --console</code> 会产生一个随机密码
+<ul><li><code>mysqld –initialize-insecure</code> 初始化数据库，并设置默认root密码为空</li> <li><code>mysqladmin -u root password 密码&quot;;</code> 创建root用户的密码</li></ul></li> <li>开启服务：<code>net start mysql</code></li> <li>关闭服务：<code>net stop mysql</code></li> <li>登录mysql：<code>mysql -u root -p</code></li> <li>修改密码：<code>alter user 'root'@'localhost' identified by '密码';</code></li> <li>标记删除mysql服务：<code>sc delete mysql</code></li></ol> <h2 id="centos安装"><a href="#centos安装" class="header-anchor">#</a> CentOS安装</h2> <h3 id="yum安装"><a href="#yum安装" class="header-anchor">#</a> yum安装</h3> <ul><li><a href="https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en" target="_blank" rel="noopener noreferrer">https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://blog.imzhengfei.com/centos-7-an-zhuang-pei-zhi-mysql" target="_blank" rel="noopener noreferrer">https://blog.imzhengfei.com/centos-7-an-zhuang-pei-zhi-mysql/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <blockquote><p>首先<code>CentOS7</code>默认已经不支持<code>mysql</code>，因为收费了你懂得，所以内部集成了<code>mariadb</code>，
+而安装<code>mysql</code>的话会和<code>mariadb</code>的文件冲突，所以需要先卸载掉<code>mariadb</code>，以下为卸载<code>mariadb</code>，安装<code>mysql</code>的步骤。</p></blockquote> <p><strong>卸载</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 查看软件包</span>
+<span class="token function">rpm</span> -qa <span class="token operator">|</span> <span class="token function">grep</span> -i <span class="token string">&quot;mariadb\|mysql&quot;</span>
+<span class="token comment"># --nodeps强制卸载</span>
+<span class="token function">rpm</span> -e --nodeps mariadb-libs-5.5.56-2.el7.x86_64
+
+<span class="token comment"># 检测系统是否存在mysql</span>
+yum list installed <span class="token operator">|</span> <span class="token function">grep</span> mysql
+<span class="token comment"># 删除mysql依赖项</span>
+yum remove -y mysql mysql-server mysql-libs mysql-server
+</code></pre></div><ul><li>查找残留目录</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">whereis</span> mysql
+</code></pre></div><p><strong>安装依赖</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>yum -y <span class="token function">install</span> libaio glibc
+</code></pre></div><p><strong>下载yum源</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># MySQL 8.0</span>
+<span class="token function">wget</span> https://repo.mysql.com//mysql80-community-release-el7-1.noarch.rpm
+</code></pre></div><p><strong>安装yum源</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>yum -y localinstall mysql80-community-release-el7-1.noarch.rpm
+</code></pre></div><p><strong>查看所有版本</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>yum repolist all <span class="token operator">|</span> <span class="token function">grep</span> mysql
+</code></pre></div><blockquote><p>可以看到这里默认启用了<code>MySQL 8.0 Community Server</code>，而我们需要安装的是<code>MySQL 5.7 Community Server</code></p></blockquote> <p><strong>修改源设置</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">vi</span> /etc/yum.repos.d/mysql-community.repo
+</code></pre></div><ul><li>找到mysql57-community节点</li></ul> <blockquote><p>将<code>enabled=0</code>改成<code>enabled=1</code></p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>mysql57-community<span class="token punctuation">]</span>
+<span class="token assign-left variable">name</span><span class="token operator">=</span>MySQL <span class="token number">5.7</span> Community Server
+<span class="token assign-left variable">baseurl</span><span class="token operator">=</span>http://repo.mysql.com/yum/mysql-5.7-community/el/7/<span class="token variable">$basearch</span>/
+<span class="token assign-left variable">enabled</span><span class="token operator">=</span><span class="token number">0</span>
+<span class="token assign-left variable">gpgcheck</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token assign-left variable">gpgkey</span><span class="token operator">=</span>file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
+</code></pre></div><ul><li>找到<code>mysql80-community</code>节点</li></ul> <blockquote><p>将<code>enabled=1</code>改成<code>enabled=0</code></p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>mysql80-community<span class="token punctuation">]</span>
+<span class="token assign-left variable">name</span><span class="token operator">=</span>MySQL <span class="token number">8.0</span> Community Server
+<span class="token assign-left variable">baseurl</span><span class="token operator">=</span>http://repo.mysql.com/yum/mysql-8.0-community/el/7/<span class="token variable">$basearch</span>/
+<span class="token assign-left variable">enabled</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token assign-left variable">gpgcheck</span><span class="token operator">=</span><span class="token number">1</span>
+</code></pre></div><ul><li>或者使用命令</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 禁用MySQL版本</span>
+yum-config-manager --disable mysql80-community
+<span class="token comment"># 启用MySQL版本</span>
+yum-config-manager --enable mysql57-community
+</code></pre></div><p><strong>查看默认启用版本</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>yum repolist enabled <span class="token operator">|</span> <span class="token function">grep</span> mysql
+</code></pre></div><p><strong>安装</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>yum -y <span class="token function">install</span> mysql-community-server
+</code></pre></div><p><strong>查看安装版本</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>mysqld -V
+</code></pre></div><h3 id="编译安装"><a href="#编译安装" class="header-anchor">#</a> 编译安装</h3> <p><strong>下载</strong></p> <ul><li><a href="https://dev.mysql.com/downloads/mysql/5.7.html#downloads" target="_blank" rel="noopener noreferrer">https://dev.mysql.com/downloads/mysql/5.7.html#downloads<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <p><img src="/images/MySQL-glibc%E4%B8%8B%E8%BD%BD.png" alt=""></p> <p><strong>解压</strong></p> <blockquote><p>建议：不要安装到其它目录，否则数据库初始化的时候会报<code>cannot change dir</code>的错</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">tar</span> zxvf mysql-5.7.22-linux-glibc2.12-x86_64.tar.gz -C /usr/local/mysql
+<span class="token comment"># 重命名</span>
+<span class="token function">mv</span> mysql-5.7.22-linux-glibc2.12-x86_64 mysql
+</code></pre></div><p><strong>创建用户组</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>group <span class="token function">add</span> mysql
+</code></pre></div><p><strong>创建用户</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>user <span class="token function">add</span> -r -g mysql mysql
+</code></pre></div><ul><li><p>为了安全性，给mysql数据库创建专有用户，该用户只能访问mysql目录，不能访问系统其它目录</p></li> <li><p>另外不建议直接用root初始化mysql，否则连接mysql时会报错：</p></li></ul> <blockquote><p><code>[ERROR] Fatal error: Please read &quot;Security&quot; section of the manual to find out how to run mysqld as root!</code></p></blockquote> <p><strong>创建data目录</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> /usr/local/mysql
+<span class="token function">mkdir</span> data
+</code></pre></div><p><strong>指定用户和用户组</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> /usr/local
+<span class="token function">chown</span> -R mysql mysql/
+<span class="token function">chgrp</span> -R mysql mysql/
+</code></pre></div><blockquote><p><code>-R</code>包含目录下所有和目录和文件</p></blockquote> <p><strong>初始化</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> /usr/local/mysql/bin
+
+./mysqld --initialize --user<span class="token operator">=</span>mysql <span class="token punctuation">\</span>
+--basedir<span class="token operator">=</span>/usr/local/mysql/ <span class="token punctuation">\</span>
+--datadir<span class="token operator">=</span>/usr/local/mysql/data/ <span class="token punctuation">\</span>
+--lc_messages_dir<span class="token operator">=</span>/usr/local/mysql/share <span class="token punctuation">\</span>
+--lc_messages<span class="token operator">=</span>en_US
+</code></pre></div><blockquote><p>记住生成的临时密码,如果忘记密码或者想重新初始化，可以先将<code>mysql/data</code>目录中文件删除，然后再执行初始化命令</p></blockquote> <p><strong>启动</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> /usr/local/mysql/bin
+<span class="token comment"># 启动</span>
+./mysqld_safe --user<span class="token operator">=</span>mysql <span class="token operator">&amp;</span>
+</code></pre></div><p><strong>设为开机启动</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> /usr/local/mysql/support-files/
+<span class="token function">cp</span> mysql.server /etc/init.d/mysql
+<span class="token function">vi</span> /etc/init.d/mysql
+</code></pre></div><blockquote><p>将mysql目录填上</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token assign-left variable">basedir</span><span class="token operator">=</span>/usr/local/mysql/
+<span class="token assign-left variable">datadir</span><span class="token operator">=</span>/usr/local/mysql/data/
+</code></pre></div><p><strong>授权</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">chmod</span> +x /etc/init.d/mysql
+</code></pre></div><p><strong>添加开机启动</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">chkconfig</span> --add mysql
+</code></pre></div><p><strong>service启动</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 重启服务</span>
+<span class="token function">service</span> mysql restart
+<span class="token comment"># 停止服务</span>
+<span class="token function">service</span> mysql stop
+<span class="token comment"># 启动服务</span>
+<span class="token function">service</span> mysql start
+<span class="token comment"># 查看服务</span>
+<span class="token function">service</span> mysql status
+</code></pre></div><h2 id="配置"><a href="#配置" class="header-anchor">#</a> 配置</h2> <ul><li>5.7动态参数 <a href="https://dev.mysql.com/doc/refman/5.7/en/dynamic-system-variables.html" target="_blank" rel="noopener noreferrer">5.7 Dynamic System Variables<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>8.0动态参数 <a href="https://dev.mysql.com/doc/refman/8.0/en/dynamic-system-variables.html" target="_blank" rel="noopener noreferrer">8.0 Dynamic System Variables<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <ul><li><a href="https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html" target="_blank" rel="noopener noreferrer">https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><code>set persist</code> 修改并持久化动态参数</li> <li><code>set persist_only</code> 持久化静态参数</li></ul></li> <li><a href="https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html" target="_blank" rel="noopener noreferrer">服务器系统变量 - 官网<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <blockquote><p>从5.7.17后mysql就没有默认的<code>my_default.cnf</code>文件，需要手动创建</p></blockquote> <blockquote><p>windows在mysql目录下创建一个ini或cnf配置文件</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">vi</span> /etc/my.cnf
+</code></pre></div><blockquote><p>按<code>i</code>后输入以下内容</p></blockquote> <div class="language-conf extra-class"><pre class="language-text"><code>[mysqld]
+# sql_mode = NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES 
+
+# 一般配置选项
+basedir = /usr/local/mysql/
+datadir = /usr/local/mysql/data
+port = 3306
+character-set-server = utf8
+explicit_defaults_for_timestamp = true
+# socket = /var/run/mysqld/mysqld.sock
+# 0：区分大小写，1：不区分大小写
+lower_case_table_names =1
+
+#下面是可选项，要不要都行，如果出现启动错误，则全部注释掉，
+#保留最基本的配置选项，然后尝试添加某些配置项后启动，检测配置项是否有误
+back_log = 300
+max_connections = 3000
+max_connect_errors = 50
+table_open_cache = 4096
+max_allowed_packet = 32M
+#binlog_cache_size = 4M
+
+max_heap_table_size = 128M
+read_rnd_buffer_size = 16M
+sort_buffer_size = 16M
+join_buffer_size = 16M
+thread_cache_size = 16
+query_cache_size = 128M
+query_cache_limit = 4M
+ft_min_word_len = 8
+
+# 默认开启事件调度器ON或者是1
+event_scheduler=ON
+thread_stack = 512K
+#默认是REPEATABLE-READ，改成读已提交
+transaction-isolation=READ-COMMITTED
+#永久设置手动提交事务
+#autocommit=0
+tmp_table_size = 128M
+#log-bin=mysql-bin
+long_query_time = 6
+
+server_id=1
+
+innodb_buffer_pool_size = 1G
+innodb_thread_concurrency = 16
+innodb_log_buffer_size = 16M
+
+innodb_log_file_size = 512M
+innodb_log_files_in_group = 3
+innodb_max_dirty_pages_pct = 90
+innodb_lock_wait_timeout = 120
+innodb_file_per_table = on
+
+[mysqldump]
+quick
+max_allowed_packet = 32M
+
+[mysql]
+no-auto-rehash
+default-character-set=utf8
+safe-updates
+
+[myisamchk]
+key_buffer = 16M
+sort_buffer_size = 16M
+read_buffer = 8M
+write_buffer = 8M
+
+[mysqlhotcopy]
+interactive-timeout
+
+[mysqld_safe]
+open-files-limit = 8192
+
+</code></pre></div><h3 id="yum安装配置"><a href="#yum安装配置" class="header-anchor">#</a> yum安装配置</h3> <div class="language-conf extra-class"><pre class="language-text"><code>[client]
+#password   = your_password
+port        = 3306
+socket      = /var/lib/mysql/mysql.sock
+
+[mysqld]
+port        = 3306
+socket      = /var/lib/mysql/mysql.sock
+datadir = /var/lib/mysql
+symbolic-links= 0
+log-error= /var/log/mysqld.log
+pid-file= /var/run/mysqld/mysqld.pid
+skip-external-locking
+performance_schema_max_table_instances=400
+table_definition_cache=400
+key_buffer_size = 32M
+max_allowed_packet = 100G
+table_open_cache = 128
+sort_buffer_size = 768K
+net_buffer_length = 8K
+read_buffer_size = 768K
+read_rnd_buffer_size = 512K
+myisam_sort_buffer_size = 8M
+thread_cache_size = 16
+query_cache_size = 16M
+tmp_table_size = 32M
+sql-mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+
+explicit_defaults_for_timestamp = true
+#skip-networking
+max_connections = 500
+max_connect_errors = 100
+open_files_limit = 65535
+
+# 0：区分大小写，1：不区分大小写
+lower_case_table_names =1
+# 默认开启事件调度器ON或者是1
+event_scheduler=ON
+
+thread_stack = 512K
+#默认是REPEATABLE-READ，改成读已提交
+transaction-isolation=READ-COMMITTED
+#永久设置手动提交事务
+#autocommit=0
+tmp_table_size = 128M
+#注释掉之后，会关闭binlog日志
+log-bin=mysql-bin
+#注释掉之后，会关闭binlog日志
+binlog_format=mixed
+
+# 数据库ID号,为1时表示为Master,其中master_id必须为1到232–1
+# 之间的一个正整数值，主从server-id不能一样;
+server-id = 1
+#自动删除5天前的日志。默认值为0，表示从不删除。
+expire_logs_days = 5
+slow_query_log=1
+slow-query-log-file=/var/lib/mysql/mysql-slow.log
+long_query_time=3
+#log_queries_not_using_indexes=on
+
+# MySQL5.7.11拥有，默认值为keyring_file，
+# InnoDB表空间在初始化InnoDB之前需要此插件来加密，
+# MySQL5.7.12及以后此参数默认为空
+#early-plugin-load = &quot;&quot;
+
+#loose-innodb-trx=0
+#loose-innodb-locks=0
+#loose-innodb-lock-waits=0
+#loose-innodb-cmp=0
+#loose-innodb-cmp-per-index=0
+#loose-innodb-cmp-per-index-reset=0
+#loose-innodb-cmp-reset=0
+#loose-innodb-cmpmem=0
+#loose-innodb-cmpmem-reset=0
+#loose-innodb-buffer-page=0
+#loose-innodb-buffer-page-lru=0
+#loose-innodb-buffer-pool-stats=0
+#loose-innodb-metrics=0
+#loose-innodb-ft-default-stopword=0
+#loose-innodb-ft-inserted=0
+#loose-innodb-ft-deleted=0
+#loose-innodb-ft-being-deleted=0
+#loose-innodb-ft-config=0
+#loose-innodb-ft-index-cache=0
+#loose-innodb-ft-index-table=0
+#loose-innodb-sys-tables=0
+#loose-innodb-sys-tablestats=0
+#loose-innodb-sys-indexes=0
+#loose-innodb-sys-columns=0
+#loose-innodb-sys-fields=0
+#loose-innodb-sys-foreign=0
+#loose-innodb-sys-foreign-cols=0
+
+default_storage_engine = InnoDB
+innodb_data_home_dir = /var/lib/mysql
+innodb_data_file_path = ibdata1:10M:autoextend
+innodb_log_group_home_dir = /var/lib/mysql
+innodb_buffer_pool_size = 128M
+innodb_log_file_size = 64M
+innodb_log_buffer_size = 16M
+innodb_flush_log_at_trx_commit = 1
+innodb_lock_wait_timeout = 120
+innodb_max_dirty_pages_pct = 90
+innodb_read_io_threads = 3
+innodb_write_io_threads = 3
+
+[mysqldump]
+quick
+max_allowed_packet = 16M
+
+[mysql]
+no-auto-rehash
+
+[myisamchk]
+key_buffer_size = 32M
+sort_buffer_size = 768K
+read_buffer = 2M
+write_buffer = 2M
+
+[mysqlhotcopy]
+interactive-timeout
+</code></pre></div><h3 id="宝塔面板安装配置"><a href="#宝塔面板安装配置" class="header-anchor">#</a> 宝塔面板安装配置</h3> <div class="language-conf extra-class"><pre class="language-text"><code>[client]
+#password   = your_password
+port        = 3306
+socket      = /tmp/mysql.sock
+
+[mysqld]
+port        = 3306
+socket      = /tmp/mysql.sock
+datadir = /usr/local/mysql/data
+skip-external-locking
+performance_schema_max_table_instances=400
+table_definition_cache=400
+key_buffer_size = 32M
+max_allowed_packet = 100G
+table_open_cache = 128
+sort_buffer_size = 768K
+net_buffer_length = 8K
+read_buffer_size = 768K
+read_rnd_buffer_size = 512K
+myisam_sort_buffer_size = 8M
+thread_cache_size = 16
+query_cache_size = 16M
+tmp_table_size = 32M
+sql-mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+
+explicit_defaults_for_timestamp = true
+#skip-networking
+max_connections = 500
+max_connect_errors = 100
+open_files_limit = 65535
+
+# 0：区分大小写，1：不区分大小写
+lower_case_table_names =1
+# 默认开启事件调度器ON或者是1
+event_scheduler=ON
+
+thread_stack = 512K
+#默认是REPEATABLE-READ，改成读已提交
+transaction-isolation=READ-COMMITTED
+#永久设置手动提交事务
+#autocommit=0
+tmp_table_size = 128M
+#注释掉之后，会关闭binlog日志
+log-bin=mysql-bin
+#注释掉之后，会关闭binlog日志
+binlog_format=mixed
+server-id = 1
+#自动删除5天前的日志。默认值为0，表示从不删除。
+expire_logs_days = 5
+slow_query_log=1
+slow-query-log-file=/usr/local/mysql/data/mysql-slow.log
+long_query_time=3
+#log_queries_not_using_indexes=on
+# MySQL5.7.11拥有，默认值为keyring_file，
+# InnoDB表空间在初始化InnoDB之前需要此插件来加密，
+# MySQL5.7.12及以后此参数默认为空
+#early-plugin-load = &quot;&quot;
+
+#loose-innodb-trx=0
+#loose-innodb-locks=0
+#loose-innodb-lock-waits=0
+#loose-innodb-cmp=0
+#loose-innodb-cmp-per-index=0
+#loose-innodb-cmp-per-index-reset=0
+#loose-innodb-cmp-reset=0
+#loose-innodb-cmpmem=0
+#loose-innodb-cmpmem-reset=0
+#loose-innodb-buffer-page=0
+#loose-innodb-buffer-page-lru=0
+#loose-innodb-buffer-pool-stats=0
+#loose-innodb-metrics=0
+#loose-innodb-ft-default-stopword=0
+#loose-innodb-ft-inserted=0
+#loose-innodb-ft-deleted=0
+#loose-innodb-ft-being-deleted=0
+#loose-innodb-ft-config=0
+#loose-innodb-ft-index-cache=0
+#loose-innodb-ft-index-table=0
+#loose-innodb-sys-tables=0
+#loose-innodb-sys-tablestats=0
+#loose-innodb-sys-indexes=0
+#loose-innodb-sys-columns=0
+#loose-innodb-sys-fields=0
+#loose-innodb-sys-foreign=0
+#loose-innodb-sys-foreign-cols=0
+
+default_storage_engine = InnoDB
+innodb_data_home_dir = /usr/local/mysql/data
+innodb_data_file_path = ibdata1:10M:autoextend
+innodb_log_group_home_dir = /usr/local/mysql/data
+innodb_buffer_pool_size = 128M
+innodb_log_file_size = 64M
+innodb_log_buffer_size = 16M
+innodb_flush_log_at_trx_commit = 1
+innodb_lock_wait_timeout = 120
+innodb_max_dirty_pages_pct = 90
+innodb_read_io_threads = 3
+innodb_write_io_threads = 3
+
+[mysqldump]
+quick
+max_allowed_packet = 16M
+
+[mysql]
+no-auto-rehash
+
+[myisamchk]
+key_buffer_size = 32M
+sort_buffer_size = 768K
+read_buffer = 2M
+write_buffer = 2M
+
+[mysqlhotcopy]
+interactive-timeout
+</code></pre></div><blockquote><p>按<code>ESC</code>后输入<code>:wq</code>退出</p></blockquote></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/vuePress-web-view/《SQL》笔记/MySQL存储过程.html" class="prev">
+        MySQL存储过程
+      </a></span> <span class="next"><a href="/vuePress-web-view/《SQL》笔记/MySQL笔记.html">
+        MySQL笔记
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/vuePress-web-view/assets/js/app.9d548cc9.js" defer></script><script src="/vuePress-web-view/assets/js/2.d261dd2c.js" defer></script><script src="/vuePress-web-view/assets/js/201.68d02e94.js" defer></script>
+  </body>
+</html>

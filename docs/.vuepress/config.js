@@ -30,7 +30,7 @@ module.exports = {
   hot: true,
   // base:'./',
   base: "/vuePress-web-view",
-  // dest: './dist',
+  dest: './dist',
   title: '前端开发-李大玄',
   description: 'Just playing around',
   // head: [

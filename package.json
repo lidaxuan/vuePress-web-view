@@ -7,7 +7,9 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "bash deploy.sh"
+    "deploy": "gh-pages -d docs/.vuepress/dist",
+    "commit": "npm run docs:build && npm run deploy"
+
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
     "vuepress": "^1.9.7"
   },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "vuepress-plugin-auto-sidebar": "^2.3.2",
     "vuepress-plugin-toolbar": "^1.0.1"
   }
